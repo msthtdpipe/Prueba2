@@ -33,3 +33,4 @@ INSERT INTO libros (titulo, autor, anio_publicacion, genero, disponible) VALUES
 ('La sombra del viento', 'Carlos Ruiz Zafón', 2001, 'Misterio', TRUE),
 ('1984', 'George Orwell', 1949, 'Ciencia ficción', FALSE),
 ('El principito', 'Antoine de Saint-Exupéry', 1943, 'Infantil', TRUE);
+
