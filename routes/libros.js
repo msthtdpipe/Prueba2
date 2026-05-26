@@ -10,9 +10,8 @@ const router = express.Router();
 const librosController = require('../controllers/librosController');
 
 // Importar middlewares
-const { verificarSesion } = require('../middlewares/authMiddleware');
+const { verificarApiKey } = require('../middlewares/authMiddleware');
 const { loggerMiddleware } = require('../middlewares/loggerMiddleware');
-
 // ============================================================
 // RUTAS PÚBLICAS (no requieren autenticación)
 // ============================================================
@@ -29,13 +28,8 @@ router.get('/:id', loggerMiddleware, librosController.obtenerLibro);
 // ============================================================
 
 
-// POST /api/libros - Crear un nuevo libro
-router.post('/', verificarSesion, librosController.crearLibro);
-
-// PUT /api/libros/:id - Actualizar un libro existente
-router.put('/:id', verificarSesion, librosController.actualizarLibro);
-
-// DELETE /api/libros/:id - Eliminar un libro
-router.delete('/:id', verificarSesion, librosController.eliminarLibro);
+router.post('/', verificarApiKey, librosController.crearLibro);
+router.put('/:id', verificarApiKey, librosController.actualizarLibro);
+router.delete('/:id', verificarApiKey, librosController.eliminarLibro);
 
 module.exports = router;
