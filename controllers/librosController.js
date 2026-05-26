@@ -148,6 +148,7 @@ async function actualizarLibro(req, res) {
     }
 }
 
+
 /**
  * CONTROLADOR: Eliminar un libro
  * DELETE /api/libros/:id

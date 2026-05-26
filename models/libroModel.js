@@ -142,11 +142,11 @@ async function buscarPorTitulo(titulo) {
     const query = 'SELECT * FROM libros WHERE titulo LIKE ?';
     const values = [`%${titulo}%`];
     
-    // CORRECCIÓN: Cambiar 'db' por 'pool'
     const [rows] = await pool.query(query, values);
     
     return rows; 
 }
+
 
 module.exports = {
     obtenerTodos,

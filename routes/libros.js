@@ -28,6 +28,7 @@ router.get('/:id', loggerMiddleware, librosController.obtenerLibro);
 // RUTAS PROTEGIDAS (requieren autenticación)
 // ============================================================
 
+
 // POST /api/libros - Crear un nuevo libro
 router.post('/', verificarSesion, librosController.crearLibro);
 
