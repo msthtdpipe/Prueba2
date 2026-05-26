@@ -136,11 +136,24 @@ async function buscar(termino) {
     }
 }
 
+
+// FUNCION TAREA 2
+async function buscarPorTitulo(titulo) {
+    const query = 'SELECT * FROM libros WHERE titulo LIKE ?';
+    const values = [`%${titulo}%`];
+    
+    // CORRECCIÓN: Cambiar 'db' por 'pool'
+    const [rows] = await pool.query(query, values);
+    
+    return rows; 
+}
+
 module.exports = {
     obtenerTodos,
     obtenerPorId,
     crear,
     actualizar,
     eliminar,
-    buscar
+    buscar,
+    buscarPorTitulo
 };
